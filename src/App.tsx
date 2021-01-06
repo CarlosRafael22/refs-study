@@ -1,5 +1,5 @@
 import React from 'react';
-import { SimpleRef, SimpleCallbackRef, SimpleCallbackRefRerender, CallbackRef } from './cases';
+import { SimpleRef, SimpleCallbackRef, SimpleCallbackRefRerender, CallbackRef, SimpleForwardRef } from './cases';
 import './App.css';
 
 function App() {
@@ -9,6 +9,7 @@ function App() {
       <SimpleCallbackRef />
       <SimpleCallbackRefRerender />
       <CallbackRef />
+      <SimpleForwardRef />
     </div>
   );
 }
