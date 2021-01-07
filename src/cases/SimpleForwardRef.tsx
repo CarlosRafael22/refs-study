@@ -13,7 +13,7 @@ const SimpleForwardRef = () => {
 
     return (
         <div>
-            <ForwardedInput ref = {inputRef} placeholder="Type here"/>
+            <ForwardedInput ref={inputRef} placeholder="Type here"/>
             <button onClick={selectText}>Select text</button>
         </div>
     );
