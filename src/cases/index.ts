@@ -4,6 +4,7 @@ import SimpleCallbackRefRerender from './SimpleCallbackRefRerender';
 import CallbackRef from './CallbackRef';
 import SimpleForwardRef from './SimpleForwardRef';
 import ImperativeHandle from './ImperativeHandle';
+import SimpleValueRef from './SimpleValueRef';
 
 export {
     SimpleRef,
@@ -11,5 +12,6 @@ export {
     SimpleCallbackRefRerender,
     CallbackRef,
     SimpleForwardRef,
-    ImperativeHandle
+    ImperativeHandle,
+    SimpleValueRef
 };
