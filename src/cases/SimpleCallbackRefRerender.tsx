@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 
 const SimpleCallbackRefRerender = () => {
-    let inputRef: HTMLInputElement | null;
+    let inputRef: HTMLInputElement;
     const [count, setCount] = useState(0);
 
     const onClick = () => {
@@ -18,12 +18,13 @@ const SimpleCallbackRefRerender = () => {
         setCount(count+1);
     }
 
-    console.log('Rendering');
     return (
         <div>
             <input ref={node => { 
-                console.log('Attach node: ', node)
-                inputRef = node;
+                console.log('Attached node: ', node)
+                if (node) {
+                    inputRef = node;
+                }
              }} />
             <button onClick={onClick}>Log value</button>
             <button onClick={onFocusClick}>Focus on input</button>

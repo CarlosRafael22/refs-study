@@ -8,16 +8,16 @@ const SimpleValueRef = () => {
     const increment = () => {
         refCount.current++;
         count++;
-        console.log('O count: ', count)
-        console.log('O ref count: ', refCount)
+        console.log('The count: ', count)
+        console.log('The refCount: ', refCount)
     };
 
     const showCounter = () => setShow(true);
 
-    console.log(`Rendering SimpleValueRef with ref ${refCount.current}, without ref ${count}`)
+    console.log(`Rendering SimpleValueRef with refCount as ${refCount.current} and count as ${count}`)
     return (
         <div>
-            <button onClick={increment}>Click here!</button>
+            <button onClick={increment}>Click to increment!</button>
             <button onClick={showCounter}>Show counter</button>
             {show && <p>Times you clicked on button: with ref {refCount.current}, without ref {count}</p>}
         </div>

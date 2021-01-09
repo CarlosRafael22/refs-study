@@ -1,7 +1,11 @@
 import React from 'react';
 
-const ForwardedInput = React.forwardRef<HTMLInputElement, any>((props, ref) => (
-    <input ref={ref} placeholder={props.placeholder} />
+type ForwardedInputProps = {
+    placeholder?: string
+};
+
+const ForwardedInput = React.forwardRef<HTMLInputElement, ForwardedInputProps>(({ placeholder }, ref) => (
+    <input ref={ref} placeholder={placeholder} />
 ));
 
 const SimpleForwardRef = () => {
