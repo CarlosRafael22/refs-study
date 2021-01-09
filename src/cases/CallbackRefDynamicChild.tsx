@@ -1,6 +1,6 @@
 import React, { useState, useRef } from 'react';
 
-const SimpleCallbackRefRerender = () => {
+const CallbackRefDynamicChild = () => {
     const inputRef = useRef<HTMLInputElement>(null);
     const secRef = useRef<HTMLInputElement>(null);
     const [visible, setVisibility] = useState(false);
@@ -15,10 +15,12 @@ const SimpleCallbackRefRerender = () => {
         inputRef.current?.focus();
     }
 
-    // const callbackRef = (node: HTMLInputElement) => {
-    //     console.log('Attached node: ', node);
-    //     node && node.focus();
-    // }
+    const callbackRef = (node: HTMLInputElement) => {
+        console.log('Attached node: ', node);
+        if(node) {
+            node.focus();
+        }
+    }
 
     console.log('Rendering: ', inputRef, secRef);
     return (
@@ -27,7 +29,7 @@ const SimpleCallbackRefRerender = () => {
             <button onClick={onClick}>Unlock next input</button>
             {visible && (
                 <>
-                <input ref={secRef} />
+                <input ref={callbackRef} />
                 <button onClick={onFocusClick}>Focus on first input</button>
                 </>
             )}
@@ -35,4 +37,4 @@ const SimpleCallbackRefRerender = () => {
     );
 };
 
-export default SimpleCallbackRefRerender;
+export default CallbackRefDynamicChild;
